@@ -1,4 +1,4 @@
-# DevOps with Terraform
+![image](https://github.com/user-attachments/assets/22087559-46b4-4311-851e-833d49430306)x`# DevOps with Terraform
 
 #### Install Terraform in EC2 Ubunu
 
@@ -229,3 +229,55 @@ If you hit the Beanstalk env URL
 
 
 #### To setup Bastion Host and DB Initialization
+
+
+To create a folder named "templates" in terraform folder - Inside the templates create a file called "db-deploy.tmpl" and add below content
+
+```
+sudo -i
+cd terraform
+mkdir templates
+nano templates/db-deploy.tmpl
+
+https://github.com/kohlidevops/DevOpswithTerraform/blob/main/Terraform/TerraformProject/templates/db-deploy.tmpl
+```
+
+To create a bastion host
+
+```
+cd terraform
+nano bastion-host.tf
+
+https://github.com/kohlidevops/DevOpswithTerraform/blob/main/Terraform/TerraformProject/bastion-host.tf
+
+terraform init
+terraform fmt
+terraform validate
+terraform plan
+terraform apply
+```
+
+The bastion instance has been created
+
+
+![image](https://github.com/user-attachments/assets/edc9e382-cda5-4a13-b6c6-ac0cbbfcdcda)
+
+
+#### To deploy the Artifacts
+
+To clone the URL 
+
+```
+sudo -i
+cd terraform
+git clone https://github.com/hkhcoder/vprofile-project.git
+
+nano vprofile-project/src/main/resources/application.properties
+
+//update the MySQL, ElastiCache, MQ endpoint, portnumber, uname and password for MQ
+//Install maven
+mvn --version
+//make ensure you in vprofile-project
+mvn install
+//Build should be available in target folder - move this war and depoy to AWS Beanstalk
+````
