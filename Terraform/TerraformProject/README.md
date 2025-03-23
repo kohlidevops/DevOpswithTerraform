@@ -153,7 +153,79 @@ The security group has been created
 ![image](https://github.com/user-attachments/assets/e9083213-a6ff-4c98-9eae-d5f2f2c80392)
 
 
+#### To create a backend services - RDS, ElastiCache & Amazon MQ
+
+
+```
+sudo -i
+cd terraform
+nano backend-services.tf
+
+https://github.com/kohlidevops/DevOpswithTerraform/blob/main/Terraform/TerraformProject/backend-services.tf
+
+terraform init
+terraform fmt
+terraform validate
+terraform plan
+terraform apply
+```
+
+RDS has been created - It is up and running
+
+
+![image](https://github.com/user-attachments/assets/b85651e9-8b61-453e-9200-7aabb957d3db)
+
+
+ElastiCache has been up and running
+
+
+![image](https://github.com/user-attachments/assets/60e2eefa-bd10-466a-b0c9-9c831c01a58a)
+
+
+Amazon MQ has been initialized
+
+
+![image](https://github.com/user-attachments/assets/3c212c2e-59b5-4fed-8d12-e1dd39a18ec4)
 
 
 
+#### To create a Elastic Beanstalk app and environment
 
+First create an IAM role and trusted policy as EC2 with below policies
+
+
+![image](https://github.com/user-attachments/assets/ea2c8f7c-17ef-4a56-8aa2-432ef92cc54f)
+
+
+```
+sudo -i
+cd terraform
+nano bean-app.tf
+
+https://github.com/kohlidevops/DevOpswithTerraform/blob/main/Terraform/TerraformProject/bean-app.tf
+
+nano bean-env.tf
+
+https://github.com/kohlidevops/DevOpswithTerraform/blob/main/Terraform/TerraformProject/bean-env.tf
+
+terraform init
+terraform fmt
+terraform validate
+terraform plan
+terraform apply
+```
+
+
+The environment has been created
+
+
+![image](https://github.com/user-attachments/assets/cd61b32b-912c-4a13-8e37-4cfbc328ba48)
+
+
+If you hit the Beanstalk env URL
+
+
+![image](https://github.com/user-attachments/assets/08950649-29df-45f4-b679-3b5a4a6edd9e)
+
+
+#### To setup Bastion Host and DB Initialization
