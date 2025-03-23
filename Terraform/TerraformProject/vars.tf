@@ -2,6 +2,13 @@ variable "AWS_REGION" {
   default = "us-east-1"
 }
 
+variable "AMIS" {
+  type = map(string)
+  default = {
+    "us-east-1" = "ami-084568db4383264d4"  # Ubuntu 24.04 in us-east-1
+  }
+}
+
 variable "PRIV_KEY_PATH" {
   default = "vprofilekey"
 }
@@ -61,7 +68,6 @@ variable "Zone3" {
 variable "VpcCIDR" {
   default = "172.21.0.0/16"
 }
-
 
 variable "PubSub1CIDR" {
   default = "172.21.1.0/24"
