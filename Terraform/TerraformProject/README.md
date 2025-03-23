@@ -46,4 +46,114 @@ To create a folder named "terraform" in S3 bucket
 
 #### To create a S3 as Backend
 
+SSH to terrafrom instance
+
+https://github.com/kohlidevops/DevOpswithTerraform/blob/main/Terraform/TerraformProject/backend.tf
+
+
+```
+sudo -i
+mkdir terraform
+cd terraform
+nano backend.tf
+terraform init
+```
+
+#### To create providers
+
+
+https://github.com/kohlidevops/DevOpswithTerraform/blob/main/Terraform/TerraformProject/providers.tf
+
+
+#### To create variables 
+
+
+https://github.com/kohlidevops/DevOpswithTerraform/blob/main/Terraform/TerraformProject/vars.tf
+
+
+#### To create a Keypair
+
+SSH to Terraform instance
+
+```
+sudo -i
+cd terraform
+ssh-keygen
+:vprofilekey
+ls -lh
+cat vprofilekey.pub
+//copy paste the pub content in keypairs.tf file
+```
+
+https://github.com/kohlidevops/DevOpswithTerraform/blob/main/Terraform/TerraformProject/keypairs.tf
+
+
+Now execute
+
+```
+terraform init
+terraform fmt
+terraform validate
+terraform plan
+terraform apply
+```
+
+
+![image](https://github.com/user-attachments/assets/ad80165c-b1ab-4a0a-82ab-38bc1fe89a1e)
+
+
+The keypair has been created in AWS console
+
+
+![image](https://github.com/user-attachments/assets/dedc20ac-09b8-4240-9d00-5df1844b678f)
+
+
+#### To create a VPC and its component
+
+
+```
+sudo -i
+cd terraform
+nano vpc.tf
+
+https://github.com/kohlidevops/DevOpswithTerraform/blob/main/Terraform/TerraformProject/vpc.tf
+
+terraform init
+terraform fmt
+terraform validate
+terraform plan
+terraform apply
+```
+
+The VPC and its components has been created 
+
+
+![image](https://github.com/user-attachments/assets/19361687-837d-4bdf-a960-1725fa9ad04f)
+
+
+#### To create a Security Group 
+
+```
+sudo -i
+cd terraform
+nano secgrp.tf
+
+https://github.com/kohlidevops/DevOpswithTerraform/blob/main/Terraform/TerraformProject/secgrp.tf
+
+terraform init
+terraform fmt
+terraform validate
+terraform plan
+terraform apply
+```
+
+The security group has been created
+
+
+![image](https://github.com/user-attachments/assets/e9083213-a6ff-4c98-9eae-d5f2f2c80392)
+
+
+
+
+
 
